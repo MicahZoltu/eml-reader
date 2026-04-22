@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EML Reader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>EML Reader</h1>
+      <div>
+        <label class="btn" for="upload">Upload .eml file</label>
+        <input id="upload" type="file" accept=".eml" style="display:none">
+      </div>
+    </header>
+
+    <div id="envelope" class="card hidden">
+      <h2>Envelope</h2>
+      <div class="field"><label>From</label><div class="value" id="env-from"></div></div>
+      <div class="field"><label>To</label><div class="value" id="env-to"></div></div>
+      <div class="field"><label>Cc</label><div class="value" id="env-cc"></div></div>
+      <div class="field"><label>Bcc</label><div class="value" id="env-bcc"></div></div>
+      <div class="field"><label>Subject</label><div class="value" id="env-subject"></div></div>
+      <div class="field"><label>Date</label><div class="value" id="env-date"></div></div>
+    </div>
+
+    <div id="body-section" class="card hidden">
+      <h2>Body</h2>
+      <div id="body-content"></div>
+    </div>
+
+    <div id="attachments-section" class="card hidden">
+      <h2>Attachments</h2>
+      <ul id="attachments-list" class="attachments-list"></ul>
+    </div>
+
+    <div class="card">
+      <h2>Raw headers <button class="collapse-toggle" id="toggle-headers">Show raw headers</button></h2>
+      <div id="raw-headers-section" class="hidden">
+        <pre class="pre-wrap" id="raw-headers-content"></pre>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="parser.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>
